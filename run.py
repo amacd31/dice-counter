@@ -40,7 +40,7 @@ class DieCounter(object):
         plt.show()
 
     def get_ans(self):
-        answer = raw_input()
+        answer = raw_input().lower()
         if answer == 'quit':
             print 'You quit!'
             print 'Saving to %s...' % self.savefile
