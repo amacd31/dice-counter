@@ -47,6 +47,9 @@ class DieCounter(object):
             exit()
         elif answer == 'save':
             self.save()
+        elif answer == 'undo':
+            print "Removed roll %d, %d" % (self.d1_list.pop(), self.d2_list.pop())
+            print "Last roll now %d, %d" % (self.d1_list[-1], self.d2_list[-1])
 
         try:
             answer = int(answer)
