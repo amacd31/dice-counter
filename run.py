@@ -43,10 +43,10 @@ class DieCounter(object):
         answer = raw_input().lower()
         if answer == 'quit':
             print 'You quit!'
-            print 'Saving to %s...' % self.savefile
             self.save()
-            print 'Saved.'
             exit()
+        elif answer == 'save':
+            self.save()
 
         try:
             answer = int(answer)
@@ -60,7 +60,9 @@ class DieCounter(object):
             return self.get_ans()
 
     def save(self):
+        print 'Saving to %s...' % self.savefile
         json.dump({'d1': self.d1_list, 'd2': self.d2_list}, open(self.savefile, 'w'))
+        print 'Saved.'
 
     def update_plot(self):
         bins = np.arange(2, 14, 1)
